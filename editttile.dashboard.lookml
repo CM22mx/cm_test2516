@@ -54,7 +54,7 @@
     height: 12
   filters:
   - name: Year
-    title: Year
+    title: Year1
     type: field_filter
     default_value: '2025'
     allow_multiple_values: true
