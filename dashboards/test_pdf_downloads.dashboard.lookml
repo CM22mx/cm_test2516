@@ -1061,7 +1061,7 @@
     height: 5
   filters:
   - name: Status
-    title: Status
+    title: Status1
     type: field_filter
     default_value: COMPLETED
     allow_multiple_values: true
