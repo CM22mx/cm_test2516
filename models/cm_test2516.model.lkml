@@ -3,6 +3,7 @@ connection: "thelook"
 # include all the views
 include: "/views/**/*.view.lkml"
 include: "/dashboards/**/*.dashboard"
+include: "/testing_filters.dashboard.lookml"
 
 
 datagroup: cm_test2516_default_datagroup {
