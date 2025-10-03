@@ -8,7 +8,7 @@
   elements:
   - title: Test PDF Downloads
     name: Test PDF Downloads
-    model: thelook
+    model: cm_test2516
     explore: orders
     type: marketplace_viz_report_table::report_table-marketplace
     fields: [orders.count, users.count]
