@@ -3,6 +3,8 @@ connection: "thelook"
 # include all the views
 include: "/views/**/*.view.lkml"
 include: "/dashboards/**/*.dashboard"
+include: "/testing_filters.dashboard.lookml"
+
 
 datagroup: cm_test2516_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -26,6 +28,7 @@ explore: billion_orders {
 }
 
 explore: bud {}
+
 
 explore: budget {}
 
@@ -52,6 +55,8 @@ explore: demo_visits_data {
 explore: dept {}
 
 explore: dummy {}
+
+
 
 explore: employees {}
 
