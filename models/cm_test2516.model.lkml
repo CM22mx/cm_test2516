@@ -290,7 +290,12 @@ explore: test_space_in_column_name {}
 
 explore: thor {}
 
-explore: users {}
+explore: users {
+  always_filter: {
+    filters: [state: "-Not Applicable,-NULL"
+      ,state: "No"]
+  }
+}
 
 explore: user_data {
   join: users {
