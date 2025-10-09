@@ -293,7 +293,7 @@ explore: thor {}
 explore: users {
   always_filter: {
     filters: [state: "-Not Applicable,-NULL"
-      ,state: "No"]
+      ,city: "No"]
   }
 }
 
