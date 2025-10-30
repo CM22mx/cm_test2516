@@ -146,9 +146,9 @@ explore: lrjp14_e1757972862083_testincrementalpdt {}
 explore: map_layer {}
 
 explore: orders {
-  always_filter: {
-    filters: [orders.status: "placeholder"]
-  }
+  # always_filter: {
+  #   filters: [orders.status: "placeholder"]
+  # }
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
