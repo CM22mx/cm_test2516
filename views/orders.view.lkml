@@ -2,6 +2,9 @@ view: orders {
   sql_table_name: demo_db.orders ;;
   drill_fields: [id]
 
+  required_access_grants: [can_view_financial_data]
+
+
   dimension: id {
     primary_key: yes
     type: number
@@ -15,7 +18,7 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
-    required_access_grants: [can_view_financial_data]
+
   }
   dimension: user_id {
     type: number
