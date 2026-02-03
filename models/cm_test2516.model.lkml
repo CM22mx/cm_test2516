@@ -11,10 +11,16 @@ datagroup: cm_test2516_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+access_grant: can_view_financial_data {
+  user_attribute: status_1
+  allowed_values: [ "finance", "executive" ]
+}
 
 persist_with: cm_test2516_default_datagroup
 
 explore: billion_orders {
+
+
   join: orders {
     type: left_outer
     sql_on: ${billion_orders.order_id} = ${orders.id} ;;
@@ -146,9 +152,9 @@ explore: lrjp14_e1757972862083_testincrementalpdt {}
 explore: map_layer {}
 
 explore: orders {
-  # always_filter: {
-  #   filters: [orders.status: "placeholder"]
-  # }
+  always_filter: {
+    filters: [orders.status: "placeholder"]
+  }
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
