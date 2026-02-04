@@ -16,9 +16,10 @@ access_grant: can_view_financial_data {
   allowed_values: [ "finance", "executive" ]
 }
 
-persist_with: cm_test2516_default_datagroup
+#persist_with: cm_test2516_default_datagroup
 
 explore: billion_orders {
+  persist_with: cm_test2516_default_datagroup
 
 
   join: orders {
@@ -34,7 +35,12 @@ explore: billion_orders {
   }
 }
 
-explore: bud {}
+explore: bud {
+
+
+}
+
+explore: ndt1 {}
 
 
 explore: budget {}

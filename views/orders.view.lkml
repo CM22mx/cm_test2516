@@ -6,7 +6,23 @@ view: orders {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+
+    html:
+    {% if value < 10 %}
+    <font color:"darkgreen">{{ rendered_value }}</font>
+    {% elsif value > 20%}
+    <font color:"goldenrod">{{ rendered_value }}</font>
+    {% else %}
+    <font color:"darkred">{{ rendered_value }}</font>
+    {% endif %} ;;
+
   }
+
+  dimension: value {
+    sql: ${TABLE}.id ;;
+    type: number
+  }
+
   dimension_group: created {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
@@ -15,6 +31,14 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+
+
+    link: {
+      label: "desired label name"
+      url: "https://docs.cloud.google.com/looker/docs/derived-tables#persistent_derived_table"
+      icon_url: "url_of_an_image_file"
+    }
+
 
     drill_fields: [detail*]
 
@@ -28,6 +52,20 @@ view: orders {
     type: count
     drill_fields: [detail*]
   }
+
+
+  measure: formatted_count {
+    type: count
+    html:
+    {% if value > 100 %}
+      <span style="color:darkgreen;">{{ rendered_value }}</span>
+    {% elsif value < 50 %}
+      <span style="color:goldenrod;">{{ rendered_value }}</span>
+    {% else %}
+      <span style="color:darkred;">{{ rendered_value }}</span>
+    {% endif %} ;;
+  }
+
 
   # ----- Sets of fields for drilling ------
   set: detail {

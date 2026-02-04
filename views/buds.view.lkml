@@ -1,6 +1,9 @@
 view: buds {
+
+
   sql_table_name: demo_db.buds ;;
   drill_fields: [id]
+
 
   dimension: id {
     primary_key: yes
