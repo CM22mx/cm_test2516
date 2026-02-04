@@ -163,11 +163,8 @@ explore: orders {
 }
 
 explore: order_items {
-  access_filter: {
-    field: orders.status
-    user_attribute: status_1
 
-  }
+
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
